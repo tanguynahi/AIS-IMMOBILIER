@@ -207,9 +207,77 @@
             </button>
         </div>
     </div>
+    <style>
+           .promo-badge {
+                display: inline-block;
+                padding: 15px 25px;
+                background-color: #ff5733;
+                color: #fff;
+                font-weight: bold;
+                font-size: 1rem;
+                border-radius: 50px;
+                box-shadow: 0px 5px 15px rgba(255, 87, 51, 0.4);
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+                animation: bounceAnimation 2s infinite;
+            }
 
+            .promo-badge:before {
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                background-color: #ffc107;
+                color: #000;
+                padding: 5px 10px;
+                font-size: 0.8rem;
+                font-weight: bold;
+                border-radius: 50%;
+                animation: pulseAnimation 1.5s infinite;
+            }
+
+            .promo-badge:hover {
+                background-color: #e14e2a;
+                box-shadow: 0px 8px 20px rgba(225, 78, 42, 0.6);
+            }
+
+            @keyframes bounceAnimation {
+
+                0%,
+                100% {
+                    transform: scale(1);
+                }
+
+                50% {
+                    transform: scale(1.05);
+                }
+            }
+
+            @keyframes pulseAnimation {
+
+                0%,
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+
+                50% {
+                    transform: scale(1.2);
+                    opacity: 0.8;
+                }
+            }
+    </style>
     @if (count($proprietes) > 0)
     <div class="featured-properties content-area-16 bg-grea-3 slide-box-2">
+         <div class="row mbt-2">
+
+            <div class="col-12 col-lg-12 col-sm-12 col-md-12  ">
+                       <span class="promo-badge text-uppercase  text-center">
+                           Avec BMI-WFS, sécurisez votre investissement immobilier en toute sérénité — nous vous accompagnons à
+                           chaque étape pour garantir votre succès.
+                       </span>
+                   </div>
+        </div>
         <div class="container">
             <div class="main-title-4">
                 <h2 data-title="Propriétés Chic">Nos Propriétés</h2>

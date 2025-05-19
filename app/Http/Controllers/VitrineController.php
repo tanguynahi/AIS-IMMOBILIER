@@ -42,7 +42,7 @@ class VitrineController extends Controller
         // dd($formattedDate);
         session()->forget('dto');
         $us = Help::getAuthUser();
-        $titre = 'Accueil | Immobilier-Store';
+        $titre = 'Accueil | '. Help::$CIBLE_X;
         $types = TypePropriete::dataListe(Help::$ACTIF);
         $villes = Ville::dataListe(1, Help::$ACTIF);
         $annees = AnneeConstruction::dataListe(Help::$ACTIF);
@@ -461,6 +461,7 @@ class VitrineController extends Controller
                             $obj->DATE_VISIT = $request->date;
                             $obj->HEUR_VISIT = $request->heur;
                             $obj->TYPE_DEMAND = $request->demtype;
+                            $obj->ASSISTANCE = $request->valAssist;
                             $obj->STATUT = Help::$ENATTENTE;
                             $obj->DATECREA = Help::dhSys();
                             $obj->ID_ENTREPRISE = $propriete->ID_ENTREPRISE;
@@ -479,6 +480,7 @@ class VitrineController extends Controller
                                 $dateh = Help::dateheureFormate(Help::dhSys(),'/');
                                 $libdemand = empty($obj->TYPE_DEMAND)? '': Help::LibelleTypeDemande($obj->TYPE_DEMAND);
                                 $date = empty($obj->DATE_VISIT)? 'JJ/MM/AAAA': $obj->DATE_VISIT;
+                                      $assistance = empty($obj->ASSISTANCE) ? 'Aucun Assistance' : $obj->ASSISTANCE;
                                 $heure = empty($obj->HEUR_VISIT)? 'HH:MM': $obj->HEUR_VISIT;
                                 $annee = empty($propriete->ANNEE)? 'x': $propriete->ANNEE;
                                 $adresse = empty($propriete->ADRESSE)? 'x': $propriete->ADRESSE;
@@ -509,6 +511,7 @@ class VitrineController extends Controller
 
                                     $message .= "
                                     Propriete : $libpropriete <br>
+                                    Assistance : <b> $assistance </b> <br>
                                     Categorie : $libcategorie <br>
                                     Type : $libtype <br>
                                     Année : $annee <br>

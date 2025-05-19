@@ -356,7 +356,7 @@
                             </tr>
                             <tr>
                                 <td class="content-block powered-by">
-                                    <a href="https://tandemafrica.ci/">{{$entreprise->RAISON_SOCIALE ?? "XXXXXXXXXXXXX" }}</a> | Tel : (+225)
+                                    <a href="https://fdma.ci/">{{$entreprise->RAISON_SOCIALE ?? "XXXXXXXXXXXXX" }}</a> | Tel : (+225)
                                     2722421619
                                     <br><br>
                                 </td>

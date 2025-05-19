@@ -38,6 +38,7 @@
                                             <th class="sort" data-sort="id">Type dem.</th>
                                             <th class="sort" data-sort="name">Client</th>
                                             <th class="sort" data-sort="customer_name">Propriete</th>
+                                            <th class="sort" data-sort="names">Assistance</th>
                                             <th class="sort" data-sort="email">Date</th>
                                             <th class="sort" data-sort="phone">Intitulé</th>
                                             <th class="sort" data-sort="status">Status</th>
@@ -52,6 +53,9 @@
                                             <td class="customer_name" title="{{$value->LIB_PROPRIETE ?? ''}}">
                                                 {{ Help::strCut($value->LIB_PROPRIETE ?? 'xxxxxx', 0, 15, '...') }}
                                             </td>
+                                                <td class="names">
+                                                    {{ Help::strCut($value->ASSISTANCE ?? 'xxxxxx', 0, 15, '...') }}
+                                                </td>
                                             <td class="email">
                                                 @if($value->TYPE_DEMAND==1)
                                                     <b>{{ $value->DATE_VISIT ?? 'JJ/MM/AAAA' }}

@@ -23,6 +23,7 @@ class DemandeVisite extends Model {
         "TYPE_DEMAND" ,
         "HEUR_VISIT" ,
         "MESSAGE" ,
+        "ASSISTANCE", /// nouveau champs ajouter pour les assistances
         "STATUT",
         "DATECREA",
         "DATEMAJ",
