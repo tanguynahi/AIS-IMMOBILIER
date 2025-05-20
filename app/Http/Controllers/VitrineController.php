@@ -14,6 +14,7 @@ use App\Models\APropos;
 use App\Models\Service;
 use App\Models\Prospect;
 use App\Models\Bannieres;
+use App\Models\Visiteurs;
 use App\Models\Categories;
 use App\Models\Entreprise;
 use App\Models\Personnels;
@@ -53,6 +54,7 @@ class VitrineController extends Controller
         $envedettes = Proprietes::proprietesFeatured(Help::$ENTREPRISE);
         $agents = count(Personnels::dataListe(Help::$ENTREPRISE));
         $counters = Proprietes::nbPropretiesByType(Help::$ENTREPRISE);
+            Visiteurs::saveLog();
         return view('pages.site.index', compact('titre', 'us', 'types', 'villes', 'annees', 'categories', 'proprietes', 'envedettes', 'agents', 'counters', 'categoriesFiltres', 'bannieres'));
     }
 
@@ -85,7 +87,7 @@ class VitrineController extends Controller
             $idPays = $pays[0]->ID_PAYS;
         }
         $villes = Ville::dataListe($idPays, Help::$ACTIF);
-
+            Visiteurs::saveLog();
         return view('pages.site.detail-propriete',
         compact('us', 'titre', 'categories', 'proprietes', 'files', 'plan', 'similar', 'recent', 'types', 'pays', 'annee', 'idPays', 'villes'));
     }
@@ -98,6 +100,7 @@ class VitrineController extends Controller
             $request = session()->get('dtmp');
             session()->forget('dtmp');
         }
+            Visiteurs::saveLog();
         return view('pages.site.catalogue', compact('us', 'titre', 'categories', 'request'));
     }
     public function SearchSess(Request $request) {
@@ -189,6 +192,7 @@ class VitrineController extends Controller
         $titre = 'Services | Immobilier-Store';
         $categories = Categories::dataListe(Help::$ENTREPRISE);
         $services = Service::dataListe(Help::$ENTREPRISE);
+            Visiteurs::saveLog();
         return view('pages.site.services', compact('us', 'titre', 'categories', 'services'));
     }
     public function serviceDetail($id) {
@@ -200,6 +204,7 @@ class VitrineController extends Controller
         if(isset($proprietes->ID_PROPRIETES) && $proprietes->ID_PROPRIETES>0){
             $recent = Proprietes::proprieteRecent($proprietes->ID_PROPRIETES);
         }else{ $recent = []; }
+            Visiteurs::saveLog();
         return view('pages.site.services-detail', compact('us', 'titre', 'categories', 'services', 'service', 'recent'));
     }
     public function apropos() {
@@ -210,12 +215,14 @@ class VitrineController extends Controller
         $personnes = Personnels::dataListe(Help::$ENTREPRISE);
         $agents = count($personnes);
         $counters = Proprietes::nbPropretiesByType(Help::$ENTREPRISE);
+            Visiteurs::saveLog();
         return view('pages.site.apropos', compact('us', 'titre', 'categories', 'apropos', 'personnes', 'agents', 'counters'));
     }
     public function contact() {
         $us = Help::getAuthUser();
         $titre = 'Contactez-Nous | Immobilier-Store';
         $categories = Categories::dataListe(Help::$ENTREPRISE);
+            Visiteurs::saveLog();
         return view('pages.site.contact', compact('us', 'titre', 'categories'));
     }
 
@@ -225,6 +232,7 @@ class VitrineController extends Controller
         $us = Help::getAuthUser();
         $libform = 'Creation de compte';
         $pays = Pays::dataListe(Help::$ACTIF);
+            Visiteurs::saveLog();
         return view("pages.auth-login", compact('act', 'titre', 'us', 'libform', 'pays'));
     }
     public function ajaxInscription(Request $request, Client $obj) {
@@ -339,6 +347,7 @@ class VitrineController extends Controller
         $proprietes = Proprietes::proprietesDetail($idPropriete);
         $plan = ProprietesPlan::dataListe($idPropriete, Help::$ACTIF);
         $files = ProprieteImages::dataListe($idPropriete, Help::$ACTIF);
+            Visiteurs::saveLog();
         return view('pages.site.dem-visite', compact('us', 'titre', 'client', 'categories', 'proprietes',
         'files', 'plan', 'act', 'pays', 'idPays', 'villes'));
     }
