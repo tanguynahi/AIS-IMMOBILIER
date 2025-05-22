@@ -22,7 +22,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/initial.css') }}">
 {{-- <link rel="stylesheet" type="text/css" id="style_sheet" href="{{ asset('assets/css/skins/orange.css') }}"> --}}
-<link rel="stylesheet" type="text/css" id="style_sheet" href="{{ asset('assets/css/skins/blueLef.css') }}">
+<link rel="stylesheet" type="text/css" id="style_sheet" href="{{ asset('assets/css/skins/red-gray.css') }}">
 
 <!-- Favicon icon -->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
