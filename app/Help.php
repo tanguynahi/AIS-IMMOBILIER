@@ -18,7 +18,7 @@ class Help {
     public static $REFUSE = 4;
 
     public static $ENTREPRISE = 1;
-    public static $CIBLE_X = "FDMA TRAVAUX BATIMENT";
+    public static $CIBLE_X = "AIS IMMBILIER";
 
     // Pour la gestion des messages
     public static $E = 1; // Entreprise
@@ -80,11 +80,11 @@ class Help {
     public static function _domaine(): string {
         switch (self::TypeExe()) {
             case 'REEL':
-                return "https://fdma.ci/";
+                return "https://aisimmostore.com/";
             break;
             case 'TEST':
             case 'LOCAL':
-                return "https://fdma.ci/";
+                return "https://aisimmostore.com/";
             break;
             default:
                 return "http://127.0.0.1:8000/";
@@ -398,7 +398,7 @@ class Help {
         $exe = 'REEL';
         $exe = 'LOCAL';
         if ($exe == 'REEL') {
-            return "https://fdma.ci/";
+            return "https://aisimmostore.com/";
             // return "https://" . self::getIp() . ":8000/";
         } else {
             return "https://" . self::getIp() . ":8000/";
