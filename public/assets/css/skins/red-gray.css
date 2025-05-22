@@ -981,7 +981,7 @@ li.active.btn.filtr-button.filtr {
 }
 
 .tab-box-2.tabbing-box .nav-link:hover {
-    background-color: transparent;!important;
+    background-color: transparent !important;
 }
 
 .tabbing-info .tabbing-box .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link{
