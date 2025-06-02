@@ -28,7 +28,7 @@
                 </li>
                 <li class="@if (request()->routeIs('paiemCliForm') || request()->routeIs('filePaiementList') ||
                     request()->routeIs('documentForm') || request()->routeIs('paiemClientList')) active @endif">
-                    <a href="{{route('paiemClientList')}}">&nbsp;Paiements </a>
+                    <a href="{{route('paiemClientList')}}">&nbsp;Historique des Paiements </a>
                 </li>
                 <li class="@if (request()->routeIs('mesInfosCli')) active @endif">
                     <a href="{{route('mesInfosCli')}}">&nbsp;Mes Informations </a>

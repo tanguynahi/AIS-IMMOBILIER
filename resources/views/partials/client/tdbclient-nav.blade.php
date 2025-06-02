@@ -5,7 +5,7 @@
             <li class="@if (request()->routeIs('tdbc')) active @endif">
                 <a href="{{ route('tdbc') }}"><i class="flaticon-dashboard"></i>Tableau de bord </a>
             </li>
-            <li class="@if (request()->routeIs('messageListCli') || request()->routeIs('messageDetailCli') 
+            <li class="@if (request()->routeIs('messageListCli') || request()->routeIs('messageDetailCli')
                 || request()->routeIs('messageNouveauCli')) ) active @endif">
                 <a href="{{route('messageListCli')}}">
                     <i class="flaticon-mail"></i>Boite de reception
@@ -26,7 +26,7 @@
             <li class="@if (request()->routeIs('paiemCliForm') || request()->routeIs('filePaiementList') ||
                 request()->routeIs('documentForm') || request()->routeIs('paiemClientList')) active @endif">
                 <a href="{{route('paiemClientList')}}">
-                    <i class="fa fa-credit-card"></i>Paiements
+                    <i class="fa fa-credit-card"></i>Historique des Paiements
                 </a>
             </li>
             <li class="@if (request()->routeIs('mesInfosCli')) active @endif">

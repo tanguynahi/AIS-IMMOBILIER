@@ -149,22 +149,30 @@
 
                                         <label style="cursor: pointer;">
                                             <input type="radio" name="assistance_option"
-                                                value="Assistance à la gestion des paiements avec
-                                                BMI-WFS"
+                                                value=" Assistance pour le suivi des paiements avec BMI-WFS"
                                                 style="margin-right: 5px;">
-                                            <span style="color: black">Assistance à la gestion des paiements avec
-                                                BMI-WFS</span>
+                                            <span style="color: black"> Assistance pour le suivi des paiements avec BMI-WFS
+                                            </span>
                                         </label>
                                         <br>
 
                                         <label style="cursor: pointer;">
                                             <input type="radio" name="assistance_option"
-                                                value="Accompagnement jusqu'à la validation de votre bien
-                                                par BMI-WFS"
+                                                value="Accompagnement de BMI-WFS jusqu'à l'acquisition de votre bien"
                                                 style="margin-right: 5px;">
-                                            <span style="color: black">Accompagnement jusqu'à la validation de votre bien
-                                                par BMI-WFS</span>
+                                            <span style="color: black">Accompagnement de BMI-WFS jusqu'à l'acquisition de
+                                                votre bien
+                                            </span>
                                         </label>
+
+                                        {{-- <div class="col-lg-12 col-md-12 col-sm-12 mt-3 mb-2">
+
+                                            <span>
+                                                J'ai lu et j'accepte la <a href="#"
+                                                    target="_blank" class="text-danger"> Politique de
+                                                    Confidentialité</a>.
+                                            </span>
+                                        </div> --}}
 
 
                                     </div>
@@ -172,7 +180,7 @@
                                         <div class="form-group message">
                                             <span style="color: black">Message </span>
                                             <textarea class="form-control" name="message" placeholder="Votre message" rows="5" id="message"
-                                                aria-label="Write message">Souhaite visiter la propriété {{ $proprietes->LIB_PROPRIETE ?? '' }} </textarea>
+                                                aria-label="Write message">Souhaitez-vous visiter la propriété  {{ $proprietes->LIB_PROPRIETE ?? '' }} ? </textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">

@@ -269,15 +269,14 @@
     </style>
     @if (count($proprietes) > 0)
     <div class="featured-properties content-area-16 bg-grea-3 slide-box-2">
-         <div class="row mbt-2">
-
-            <div class="col-12 col-lg-12 col-sm-12 col-md-12  ">
-                       <span class="promo-badge text-uppercase  text-center">
-                           Avec BMI-WFS, sécurisez votre investissement immobilier en toute sérénité — nous vous accompagnons à
-                           chaque étape pour garantir votre succès.
-                       </span>
-                   </div>
-        </div>
+        <div class="row ">
+           <div class="col-12 col-lg-12 col-sm-12 col-md-12  " style="margin-top: -100px;">
+                      <span class="promo-badge text-uppercase  text-center">
+                          Avec BMI-WFS, sécurisez votre investissement immobilier en toute sérénité — nous vous accompagnons à
+                          chaque étape pour garantir votre succès.
+                      </span>
+                  </div>
+       </div>
         <div class="container">
             <div class="main-title-4">
                 <h2 data-title="Propriétés Chic">Nos Propriétés</h2>
